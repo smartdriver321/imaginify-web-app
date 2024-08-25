@@ -1,5 +1,14 @@
-import React from 'react'
+import { transformationTypes } from '@/constants'
+import Header from '@/components/shared/Header'
 
-export default function AddTransformation() {
-	return <div>AddTransformation</div>
+export default function AddTransformationType({
+	params: { type },
+}: SearchParamProps) {
+	const transformation = transformationTypes[type]
+
+	return (
+		<>
+			<Header title={transformation.title} subtitle={transformation.subTitle} />
+		</>
+	)
 }
